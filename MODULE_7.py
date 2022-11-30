@@ -47,22 +47,15 @@ class Project:
                 print("Denied")
 
     def four(self):
-        import re
+        n1 = int(input())
+        dict1 = {}
+        for i in range(n1):
+            lst = [str(s) for s in input().split(" ")]
+            for j in lst:
+                try:
+                    dict1[j] = dict1[j] + 1
+                except:
+                    dict1[j] = 1
+        for k,w in sorted(dict1.items()):
+            print(k,w)
 
-        n = int(input())
-        freq = {}
-        for a in range(n):
-            lst = input()
-        text = lst.lower()
-        pattern = re.findall('\b[a-z]{3,15}\b',text)
-
-        for word in pattern:
-            count = freq.get(word, 0)
-            freq[word] = count + 1
-
-        most_freq = dict(sorted(freq.items(), key=lambda elem: elem[1], reverse=True))
-
-        most_freq_count = most_freq.keys()
-
-        for words in most_freq_count:
-            print(words, most_freq[words])
